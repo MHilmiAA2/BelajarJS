@@ -8,8 +8,22 @@ document.getElementById("btnTambah").addEventListener("click", function () {
     }
 
     const li = document.createElement("li");
-    li.textContent = `${nilaiTugas} `;
+    // li.textContent = `${nilaiTugas} `;
     li.classList.add("item-tugas");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
+    const span = document.createElement("span");
+    span.textContent = `${nilaiTugas}`;
+
+    checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+            li.classList.add("selesai");
+        } else {
+            li.classList.remove("selesai");
+        }
+    });
 
     const btnHapus = document.createElement("button");
     btnHapus.textContent = "Hapus";
@@ -18,6 +32,8 @@ document.getElementById("btnTambah").addEventListener("click", function () {
         li.remove();
     });
 
+    li.appendChild(checkbox);
+    li.appendChild(span);
     li.appendChild(btnHapus);
 
     document.getElementById("daftarTugas").appendChild(li);
