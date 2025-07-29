@@ -34,3 +34,9 @@
     padding: 4px 8px;
     cursor: pointer;
 }
+
+.selesai {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 0.6;
+}
