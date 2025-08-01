@@ -52,3 +52,16 @@
 #filter button:hover {
     background-color: #ccc;
 }
+
+#btnHapusSemua {
+    margin-top: 15px;
+    padding: 8px 14px;
+    background-color: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#btnHapusSemua:hover {
+    background-color: darkred;
+}
