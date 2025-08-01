@@ -121,4 +121,13 @@ tombolFilter.forEach(button => {
   });
 });
 
+document.getElementById("btnHapusSemua").addEventListener("click", function () {
+  const konfirmasi = confirm("Apakah kamu yakin ingin menghapus semua?");
+  if (!konfirmasi) return;
+
+  document.getElementById("daftarTugas").innerHTML = "";
+
+  localStorage.removeItem("tugas");
+});
+
 muatTugas();
