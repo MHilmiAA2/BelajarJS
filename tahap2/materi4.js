@@ -1,3 +1,5 @@
+const tombolFilter = document.querySelectorAll("#filter button");
+
 function simpanTugas() {
   const semuaLi = document.querySelectorAll("#daftarTugas li");
   const dataTugas = [];
@@ -95,6 +97,28 @@ document.getElementById("btnTambah").addEventListener("click", function () {
 
   input.value = "";
   input.focus();
+});
+
+tombolFilter.forEach(button => {
+  button.addEventListener("click", function () {
+    const filter = this.getAttribute("data-filter");
+    const semuaLi = document.querySelectorAll("#daftarTugas li");
+
+    semuaLi.forEach(li => {
+      const checkbox = li.querySelector("input[type='checkbox']");
+      const sudahSelesai = checkbox.checked;
+
+      if (filter === "semua") {
+        li.style.display = "flex";
+      } else if (filter === "selesai" && !sudahSelesai) {
+        li.style.display = "none";
+      } else if (filter === "belum" && sudahSelesai) {
+        li.style.display = "none";
+      } else {
+        li.style.display = "flex";
+      }
+    });
+  });
 });
 
 muatTugas();
