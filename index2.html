@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .head {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+        }
+        .card, .output {
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+        .card input {
+            margin-bottom: 1rem;
+        }
+        .card label, .card input {
+            display: block;
+        }
+        .card input {
+            width: 50%;
+            margin-top: 0.2rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            text-transform: uppercase;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            border: none;
+            background-color: rgb(0, 200, 0);
+            color: rgb(250, 250, 250);
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(0, 150, 0);
+        }
+        .output {
+            margin-top: 1rem;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <p id="sapa"></p>
-        <button id="btnSapa">Sapa</button>
-    </div>
+    <main class="container">
+        <div class="head">
+            <h1>Cek Belanja</h1>
+        </div>
+        <div class="card">
+            <label for="totalBelanja">Total Belanja yang di Beli:</label>
+            <input type="text" id="belanja" placeholder="Total Belanja ....">
+            <label for="jumlahUang">Uang yang dimiliki:</label>
+            <input type="text" id="uang" placeholder="Masukkan uang anda ....">
+
+            <button id="cekBelanja">Cek Belanja</button>
+        </div>
+        <div>
+            <p id="output"></p>
+        </div>
+    </main>
 
     <script src="script2.js"></script>
 </body>
